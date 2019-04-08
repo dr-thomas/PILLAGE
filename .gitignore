@@ -2,3 +2,4 @@ RANSAC
 *.txt
 *.csv
 *__pycache__*
+*.sav
