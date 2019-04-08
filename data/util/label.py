@@ -58,4 +58,20 @@ def label_proton_mom_from_txt(download_csv_path, download_txt_path, write_path):
                         momentum_data.append(evt_tot_momentums)
                         evt_tot_momentums = []
 
+        if len(momentum_data) != len(hit_data):
+            print('found inconsitent number of events, exiting')
+            exit()
+        out_filepath = write_path
+        out_filepath += 'out%0004d.csv'%(ifile)
+        with open(out_filepath, mode='w') as out_file:
+            out_writer = csv.writer(out_file, delimiter=',')
+            for ii in range(len(momentum_data)):
+                out = []
+                out.append(float(len(momentum_data[ii])))
+                for xx in momentum_data[ii]:
+                    out.append(float(xx))
+                for xx in hit_data[ii]:
+                    out.append(float(xx))
+                out_writer.writerow(out)
+
 
