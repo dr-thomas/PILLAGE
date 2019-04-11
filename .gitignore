@@ -3,3 +3,5 @@ RANSAC
 *.csv
 *__pycache__*
 *.sav
+.DS_Store
+*.png
