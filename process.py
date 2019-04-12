@@ -37,6 +37,7 @@ def process_files(in_file_list, batch):
                         data_X[0][ii] = float(cc)
                     data_X_scaled = std_scaler.transform(data_X)
                     evt_moms.pred_moms.append(mlp_regressor.predict(data_X_scaled))
+                momentum_data_out.append(evt_moms)
 
     save_str = 'event_momentum_data' + str(batch) + '.sav'
     pickle.dump(momentum_data_out, open(save_str, 'wb'))

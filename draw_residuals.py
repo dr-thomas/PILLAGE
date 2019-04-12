@@ -8,7 +8,8 @@ class event_momentums():
         self.pred_moms = []
         self.true_moms = []
 
-momentum_data = pickle.load(open('./model_saves/results/event_momentum_data_full.sav', 'rb'))
+#momentum_data = pickle.load(open('./model_saves/results/event_momentum_data_full.sav', 'rb'))
+momentum_data = pickle.load(open('./event_momentum_data0000.sav', 'rb'))
 
 #TODO: look at predicted momentum distribution and true momentum distribution.  something maybe fishy about pred...
 res_hist = np.array([])
