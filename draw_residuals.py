@@ -92,7 +92,6 @@ for evt in momentum_data:
             if pred_mom < xx:
                 eff_hist_pred[ii] += 1.
                 break
-    used_preds = []
     for true_mom in evt.true_moms:
         temp_index = -1
         for ii, xx in enumerate(eff_KE_hist):
@@ -107,15 +106,8 @@ for evt in momentum_data:
         if temp_index > 0:
             for ipred, pred_mom in enumerate(evt.pred_moms):
                 if abs(pred_mom - true_mom) < true_mom*0.2:
-                    was_used = False
-                    for used in used_preds:
-                        if ipred == used:
-                            was_used = True
-                            break
-                    if not was_used:
-                        eff_hist_good[temp_index] += 1.
-                        used_preds.append(ipred)
-                        break
+                    eff_hist_good[temp_index] += 1.
+                    break
 
 eff_hist = np.array([eff_hist_pred[ii]/eff_hist_true[ii] for ii in range(n_eff_bins)])
 eff_hist_wasgood = np.array([eff_hist_good[ii]/eff_hist_true[ii] for ii in range(n_eff_bins)])
@@ -140,7 +132,7 @@ plt.savefig("./efficiency.png")
 plt.figure()
 ax = plt.subplot(111)
 ax.plot(eff_KE_hist,eff_hist_wasgood)
-ax.set_xlim([0, (math.sqrt(200**2+938**2)-938)])
+ax.set_xlim([0, (math.sqrt(170**2+938**2)-938)])
 ax.set_ylim([0, 1.01])
 ax.set_xlabel("true KE (MeV)")
 ax.set_ylabel("efficiency")
