@@ -11,8 +11,8 @@ class event_momentums():
 
 def process_files(in_file_list, batch):
     momentum_data_out = []
-    mlp_regressor = pickle.load(open('./model_saves/scaled/protons_nn_full_ss.sav', 'rb'))
-    std_scaler = pickle.load(open('./model_saves/scaled/protons_nn_full_ss_std_scaler.sav', 'rb'))
+    mlp_regressor = pickle.load(open('./model_saves/protons_neural_net.sav', 'rb'))
+    std_scaler = pickle.load(open('./model_saves/protons_neural_net_std_scaler.sav', 'rb'))
 
     for ifile, file_path in enumerate(in_file_list):
         with open(file_path) as csv_file:
