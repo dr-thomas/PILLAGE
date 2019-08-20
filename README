@@ -1,2 +1,4 @@
 depends on RANSAC.  need to do: 
 $ git submodule update --init RANSAC
+
+the MLP directory contains examples of how to train a multi-layer preceptron from GArSoft analysis files
