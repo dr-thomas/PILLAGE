@@ -1,0 +1,4 @@
+[submodule "RANSAC"]
+	path = RANSAC
+	url = https://github.com/tcampbell0703/RANSAC.git
+	branch = master
