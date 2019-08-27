@@ -1,3 +1,9 @@
+Particle Identification Learning for Low Energy Argon Gas Events (PILLAGE)
+
+A combination of a Random Sample Consesus (RANSAC) based clustering algorithm for idetifying short, 
+linear tracks and a Neural Net for particle ID classifiaction and observable regression on the RANSAC'd tracks.  
+
+Install notes:
 depends on RANSAC.  need to do: 
 $ git submodule update --init RANSAC
 
